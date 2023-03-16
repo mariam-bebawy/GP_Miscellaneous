@@ -1,0 +1,13 @@
+Name:  CUDA
+Speed:  100.0
+Property names:  ('DeviceIndex', 'DeviceName', 'UseBlockingSync', 'Precision', 'UseCpuPme', 'CudaCompiler', 'TempDirectory', 'CudaHostCompiler', 'DisablePmeStream', 'DeterministicForces')
+DeviceIndex  value:  0
+DeviceName  value:  NVIDIA GeForce GTX 1650 Ti
+UseBlockingSync  value:  true
+Precision  value:  single
+UseCpuPme  value:  false
+CudaCompiler  value:  nvcc.exe
+TempDirectory  value:  C:\Users\Mars\AppData\Local\Temp
+CudaHostCompiler  value:  
+DisablePmeStream  value:  false
+DeterministicForces  value:  false
