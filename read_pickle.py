@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib import colors
 from pylab import *
 from pathlib import Path
+from zipfile import ZipFile
 
 sys.path.append("./repo_HiDpy")
 from repo_HiDpy import *
@@ -28,13 +29,14 @@ dt = 149
 prefix = '%s_pixel-%2.2f_dt-%2.2f_threshold_%s' % (pathlib.Path(outputDIR).stem, pixel_size, dt, pixel_threshold)
 
 # Open the file containing the arrays
+print("reading zip file")
 start = time.time()
-with open("./code_misc/msd_data.txt") as file:
+with ZipFile("./code_misc/msd_data.zip", "r") as zip:
     # Read the contents of the file
-    contents = file.read()
+    contents = zip.read("msd_data.txt").decode(encoding="utf-8")
 end = time.time()
 print(f"time to read file = {(end - start):.2f} sec")
-
+print(type(contents))
 
 # remove the brackets and split into individual matrices
 matrices = contents.replace('[','').split(']')
