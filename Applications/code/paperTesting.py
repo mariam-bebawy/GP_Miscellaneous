@@ -14,7 +14,8 @@ import slicing, helpers
 ################################################################
 ################################################################
 
-segCT = helpers.loadCTFile("./outputs/segCT.pickle")
+# segCT = helpers.loadPickle("./outputsPickle/segCT.pickle")
+segCT = helpers.loadPickle("./outputsPickle/CT.pickle")
 print(f"segmented CT scane shape = {segCT.shape}")
 frames, height, width = segCT.shape
 
@@ -25,7 +26,7 @@ mask[..., 1] = 255
 
 # ref = cv2.cvtColor(ref, cv2.COLOR_BGR2GRAY)
 colors = []
-for i in range(1, frames):
+for i in range(0, frames):
     curr = segCT[i]
     flow = cv2.calcOpticalFlowFarneback(ref, curr, None, 0.5, 3, 5, 3, 5, 1.2, 0)
     magnitude, angle = cv2.cartToPolar(flow[..., 0], flow[..., 1])
@@ -39,10 +40,12 @@ for i in range(1, frames):
 colors = np.array(colors)
 print(f"done with optical flow")
 
-helpers.saveVID(colors, "./outputsFlow/flow.avi")
+# helpers.saveVID(colors, "./outputsFlow/flow_segCT.avi")
+helpers.saveVID(colors, "./outputsFlow/flow_CT.avi")
 print(f"done saving flow video")
 
-helpers.showVID("./outputsFlow/flow.avi", "farneback flow")
+# helpers.showVID("./outputsFlow/flow_segCT.avi", "farneback flow")
+helpers.showVID("./outputsFlow/flow_CT.avi", "farneback flow")
 print(f"done showing video")
 
 

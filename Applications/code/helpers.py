@@ -24,7 +24,7 @@ def showVID(path, title):
     cap.release()
     cv2.destroyAllWindows()
 
-def loadCTFile(path):
+def loadPickle(path):
     with open(path, "rb") as f:
         file = pickle.load(f)
     return file
