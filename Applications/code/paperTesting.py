@@ -15,7 +15,7 @@ import slicing, helpers
 ################################################################
 
 # segCT = helpers.loadPickle("./outputsPickle/segCT.pickle")
-segCT = helpers.loadPickle("./outputsPickle/CT.pickle")
+segCT = helpers.loadPickle("./outputsPickle/segCT_new.pickle")
 print(f"segmented CT scane shape = {segCT.shape}")
 frames, height, width = segCT.shape
 
@@ -41,11 +41,11 @@ colors = np.array(colors)
 print(f"done with optical flow")
 
 # helpers.saveVID(colors, "./outputsFlow/flow_segCT.avi")
-helpers.saveVID(colors, "./outputsFlow/flow_CT.avi")
+helpers.saveVID(colors, "./outputsFlow/flow_CT_new.avi")
 print(f"done saving flow video")
 
 # helpers.showVID("./outputsFlow/flow_segCT.avi", "farneback flow")
-helpers.showVID("./outputsFlow/flow_CT.avi", "farneback flow")
+helpers.showVID("./outputsFlow/flow_CT_new.avi", "farneback flow")
 print(f"done showing video")
 
 
