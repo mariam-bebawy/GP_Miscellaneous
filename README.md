@@ -3,6 +3,5 @@
 
 #### Obtaining Data  
 Creating a virtual dataset by modelling the motion of chromatin and nuclear proteins and tracking said motion to determine the fate of the cell.  
----  
 
 #### GPU Programming
